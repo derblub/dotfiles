@@ -2,6 +2,8 @@
 export ZSH=$HOME/.oh-my-zsh
 
 
+export TIME_STYLE=+"%e %b %Y %H:%M"
+
 export BROWSER=google-chrome-stable
 
 # Set name of the theme to load.
@@ -48,7 +50,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux cp django extract node npm python ssh-agent systemd virtualenv colored-man-pages)
+plugins=(git archlinux colored-man-pages cp django extract node npm python ssh-agent systemd virtualenv grunt)
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -88,9 +90,14 @@ export PATH=${PATH}:/opt/android-sdk/platform-tools
 
 alias l='ls --color -F -la --file-type -h --group-directories-first | awk '\''{
   printf("%-4.4s ", $5);
-  printf("%4s %-3.2d %-5.5s  ", $6, $7, $8);
-  printf("%-7.59s\n", $9);   
+  printf("%6.6s:%-6.6s  ", $3, $4);
+  printf("%11.10s  ", $1);
+  printf("%3d %3s %4d %5s  ", $6, $7, $8, $9);
+  printf("%s\n", $10);   
 }'\'' | tail --lines=+2'  # Remove first line from output (formerly "total")
+# looks like:
+# 4.0K   blub:users    drwxr-xr-x   15 Aug 2015 18:45  ~/
+
 
 alias ls='ls -1 --color'
 
