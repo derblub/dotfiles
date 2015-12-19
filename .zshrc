@@ -48,7 +48,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux colored-man cp django extract node npm python ssh-agent systemd virtualenv)
+plugins=(git archlinux cp django extract node npm python ssh-agent systemd virtualenv colored-man-pages)
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
